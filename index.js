@@ -18,17 +18,17 @@ function showup_chr(category){
 		var	Ymin = d3.min(dataset, function(d){return d.勝率});
 			//取得Y軸的最大值
 		console.log(Ymax);
-		var xScale = d3.scale.linear() //產生一個屬於X軸的線性尺度
+		var xScale = d3.scaleLinear() //產生一個屬於X軸的線性尺度
 			.domain([0, dataset.length]) //傳入的值是原始資料的最小及最大值
 			.range([0 , w ]) 
 			//輸出的範圍是左邊的padd距離，到右邊的padding
 
-		var yScale = d3.scale.linear()
+		var yScale = d3.scaleLinear()
 			.domain([Ymin, Ymax])
 			.range([padding, h - padding])
 			//類似X軸的尺度
 
-		var colorScale = d3.scale.linear()
+		var colorScale = d3.scaleLinear()
 			.domain([Ymin, Ymax])
 			.range([0, 700])
 			//這次顏色都要用尺度來算
